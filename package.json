@@ -9,12 +9,14 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "eslint . --ext ts --ext tsx --ext js --fix",
+    "lint": "turbo lint",
+    "lint:commit": "turbo lint",
     "format": "turbo run format",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "type-check": "turbo type-check",
-    "lint:styled": "stylelint"
+    "lint:styled": "turbo lint:styled",
+    "lint:styled-commit": "turbo lint:styled"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
@@ -36,12 +38,13 @@
   },
   "lint-staged": {
     "./**/*.styled.{js,ts}": [
-      "yarn lint:styled",
-      "yarn lint",
+      "eslint . --ext ts --ext tsx --ext js --fix",
+      "prettier --write",
+      "stylelint",
       "git add"
     ],
     "./**/*.{js,jsx,ts,tsx}": [
-      "yarn lint",
+      "eslint . --ext ts --ext tsx --ext js --fix",
       "git add"
     ],
     "/src/**/*.scss": [
