@@ -6,8 +6,6 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
     "preserveWatchOutput": true,
     "target": "es5",
     "lib": ["dom", "dom.iterable", "es2015", "esnext"],

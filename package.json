@@ -9,12 +9,12 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
+    "lint": "eslint . --ext ts --ext tsx --ext js --fix",
     "format": "turbo run format",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "type-check": "turbo type-check",
-    "lint:styled": "turbo run lint:styled"
+    "lint:styled": "stylelint"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
@@ -31,12 +31,16 @@
   "husky": {
     "hooks": {
       "type-check": "yarn type-check",
-      "pre-commit": "yarn lint-staged"
+      "pre-commit": "npx lint-staged"
     }
   },
   "lint-staged": {
-    "./**/*.{js,jsx,ts,tsx}": [
+    "./**/*.styled.{js,ts}": [
       "yarn lint:styled",
+      "yarn lint",
+      "git add"
+    ],
+    "./**/*.{js,jsx,ts,tsx}": [
       "yarn lint",
       "git add"
     ],

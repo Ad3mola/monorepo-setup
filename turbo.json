@@ -12,13 +12,13 @@
       "cache": false
     },
     "type-check": {
-      "cache": false
+      "outputs": []
     },
     "lint:styled": {
-      "cache": false
+      "outputs": []
     },
     "format": {
-      "cache": false
+      "outputs": []
     }
   }
 }
