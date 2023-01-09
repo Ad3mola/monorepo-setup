@@ -10,13 +10,11 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo lint",
-    "lint:commit": "turbo lint",
     "format": "turbo run format",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
     "type-check": "turbo type-check",
     "lint:styled": "turbo lint:styled",
-    "lint:styled-commit": "turbo lint:styled"
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
