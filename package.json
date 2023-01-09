@@ -35,14 +35,10 @@
     }
   },
   "lint-staged": {
-    "./**/*.styled.{js,ts}": [
+    "./**/*.{js,jsx,ts,tsx}": [
       "eslint . --ext ts --ext tsx --ext js --fix",
       "prettier --write",
       "stylelint",
-      "git add"
-    ],
-    "./**/*.{js,jsx,ts,tsx}": [
-      "eslint . --ext ts --ext tsx --ext js --fix",
       "git add"
     ],
     "/src/**/*.scss": [
