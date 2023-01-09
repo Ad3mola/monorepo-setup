@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write \"./**/*.{js,ts,json}\"",
+    "format": "prettier --write \"./**/*.{js,ts,json,tsx}\"",
     "lint": "eslint . --ext ts --ext tsx --ext js --fix",
     "lint:styled": "stylelint './src/**/*.styled.ts'",
     "type-check": "tsc --pretty --noEmit"

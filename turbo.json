@@ -18,7 +18,8 @@
       "outputs": []
     },
     "format": {
-      "outputs": []
+      "outputs": [],
+      "cache": false
     }
   }
 }
