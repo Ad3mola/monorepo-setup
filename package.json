@@ -38,18 +38,22 @@
     "./**/*.styled.{js,ts}": [
       "eslint . --ext ts --ext tsx --ext js --fix",
       "prettier --write",
-      "stylelint"
+      "stylelint",
+      "git add"
     ],
     "./**/*.{js,jsx,ts,tsx}": [
       "eslint . --ext ts --ext tsx --ext js --fix",
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ],
     "/src/**/*.scss": [
       "prettier --write",
-      "stylelint --fix"
+      "stylelint --fix",
+      "git add"
     ],
     "{*.{json,md}}": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
     ]
   }
 }
