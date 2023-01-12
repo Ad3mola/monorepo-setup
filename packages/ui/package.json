@@ -33,7 +33,5 @@
     "tsconfig": "*",
     "typescript": "^4.5.2"
   },
-  "dependencies": {
-    "styled-components": "^5.3.6"
-  }
+  "dependencies": {}
 }

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"wait-on http:localhost:3000\" \"open http:localhost:3000\"",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"./**/*.{js,ts,json,tsx}\"",
@@ -15,7 +15,6 @@
     "next": "13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.6",
     "ui": "*"
   },
   "devDependencies": {
@@ -26,16 +25,6 @@
     "@types/react-dom": "^18.0.7",
     "eslint": "7.32.0",
     "eslint-config-custom": "*",
-    "postcss": "^8.4.21",
-    "postcss-scss": "^4.0.6",
-    "postcss-styled": "^0.34.0",
-    "postcss-syntax": "^0.36.2",
-    "stylelint": "^14.16.1",
-    "stylelint-a11y": "^1.2.3",
-    "stylelint-config-recommended": "^9.0.0",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0",
     "tsconfig": "*",
     "typescript": "^4.5.3"
   }

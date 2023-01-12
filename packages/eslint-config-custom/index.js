@@ -31,6 +31,7 @@ module.exports = {
   ],
   rules: {
     'no-console': 2,
+    '@next/next/no-html-link-for-pages': ['error', './src/pages'],
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
