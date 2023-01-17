@@ -1,0 +1,31 @@
+{
+  "name": "@deelaa-utils/{{ packageName }}",
+  "version": "0.0.1",
+  "description": "{{ componentName }} util",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "UNLICENSED",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs",
+    "clean": "rimraf dist *.xml lcov* jest.json node_modules .rpt2_cache .turbo",
+    "dev": "rollup -c -w --bundleConfigAsCjs",
+    "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
+    "prebuild": "yarn clean",
+    "test": "jest -c test/jest.config.js",
+    "test:watch": "jest -c test/jest.config.js --watch",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

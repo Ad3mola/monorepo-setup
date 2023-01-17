@@ -1,0 +1,32 @@
+{
+  "name": "user",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"next dev\" \"wait-on http:localhost:3000\" \"open http:localhost:3000\"",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write \"./**/*.{js,ts,json,tsx}\"",
+    "lint": "eslint . --ext ts --ext tsx --ext js --fix",
+    "lint:styled": "stylelint './src/**/*.styled.ts'",
+    "type-check": "tsc --pretty --noEmit"
+  },
+  "dependencies": {
+    "next": "13.0.0",
+    "react": "^18.2.0",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^18.2.0",
+    "global-ui": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@types/node": "^17.0.12",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "eslint": "7.32.0",
+    "eslint-config-custom": "*",
+    "tsconfig": "*",
+    "typescript": "^4.5.3"
+  }
+}

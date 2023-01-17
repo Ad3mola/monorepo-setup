@@ -1,0 +1,16 @@
+
+import {{ componentName }}, { Args } from './{{ componentName }}';
+
+describe('<{{ componentName }}>', () => {
+  let args: Args;
+  beforeEach(() => {
+    args = {
+      name: 'John Doe',
+    };
+  });
+
+  it('{{ componentName }} should work appropriately', () => {
+    const greetings = {{ componentName }}(args);
+    expect(greetings).toBeTruthy();
+  });
+});

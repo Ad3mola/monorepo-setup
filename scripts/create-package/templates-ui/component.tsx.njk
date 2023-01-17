@@ -1,0 +1,20 @@
+import * as React from 'react';
+
+export interface {{ componentName }}Props {
+  title: string;
+};
+
+const {{ componentName }}:React.FC<{{ componentName }}Props> = (props) => {
+  const { title } = props;
+  return (
+    <div data-testid="deelaa-{{ componentName }}">
+      {title}
+    </div>
+  );
+};
+
+{{ componentName }}.displayName = "{{ componentName }}";
+
+export default {{ componentName }};
+
+

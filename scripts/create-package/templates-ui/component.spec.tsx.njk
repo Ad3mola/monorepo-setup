@@ -1,0 +1,20 @@
+import * as React from 'react';
+import { cleanup } from '@testing-library/react';
+import { renderWithTheme } from '../test/test-utils';
+import {{ componentName }}, { {{ componentName }}Props } from './{{ componentName }}';
+
+describe('<{{ componentName }}>', () => {
+  let props: {{ componentName }}Props;
+  beforeEach(() => {
+    props = {
+      title: 'Example Title'
+    };
+  });
+
+  afterEach(cleanup)
+
+  test('<{{ componentName }} /> should render', () => {
+    const { getByTestId } = renderWithTheme(<{{ componentName }} {...props} />);
+    expect(getByTestId("deelaa-{{ componentName }}")).toBeDefined;
+  });
+});

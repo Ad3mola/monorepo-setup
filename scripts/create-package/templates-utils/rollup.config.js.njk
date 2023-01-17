@@ -1,0 +1,51 @@
+import { isAbsolute, relative } from 'path';
+import { get as getRoot } from 'app-root-dir';
+
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import typescript from 'rollup-plugin-typescript2';
+
+import pkg from './package.json';
+
+const input = 'src/index.ts';
+
+export default {
+  input: input,
+  output: [
+    {
+      file: pkg.main,
+      format: 'cjs',
+    },
+    {
+      file: pkg.module,
+      format: 'es',
+    },
+  ],
+  external(dependency) {
+    if (dependency === input) {
+      return false;
+    }
+
+    if (isAbsolute(dependency)) {
+      const relativePath = relative(getRoot(), dependency);
+      return Boolean(/node_modules/.exec(relativePath));
+    }
+
+    return dependency.charAt(0) !== '.';
+  },
+  plugins: [
+    resolve({
+      extensions: ['.ts'],
+      jsnext: true,
+      module: true,
+      main: true,
+    }),
+    commonjs({
+      include: 'node_modules/**',
+    }),
+    typescript({
+      typescript: require('typescript'),
+      rollupCommonJSResolveHack: true,
+    }),
+  ],
+};
